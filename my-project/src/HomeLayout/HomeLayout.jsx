@@ -4,7 +4,7 @@ import Navber from '../Components/Navber';
 
 const HomeLayout = () => {
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-10/12 mx-auto '>
 
 
             {/* Navber */}
@@ -12,6 +12,10 @@ const HomeLayout = () => {
 
             {/* Header */}
             <Header></Header>
+
+            {/* Main Layout */}
+
+            
 
 
 

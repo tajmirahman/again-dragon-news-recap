@@ -1,17 +1,25 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+import user from '../assets/user.png';
 
 const Header = () => {
     return (
-        <div className='flex gap-3'>
-
-            <div className='bg-[#D72050]'>
-                <button className=''>Latest</button>
+        <div className="navbar bg-base-100 ">
+            <div className="navbar-start">
+              
             </div>
-
-            <div className='mt-1 text-xl'>
-                <p>Match Highlights: Germany vs Spain — as it happened   !   Match Highlights: Germany vs Spain as...</p>
+            <div className="navbar-center gap-3">
+                <Link>Home</Link>
+                <Link>News</Link>
+                <Link>pages</Link>
             </div>
-
+            <div className="navbar-end">
+                
+                <div className='flex justify-center items-center gap-2'>
+                    <img src={user} alt="" />
+                    <button className='btn bg-[#403F3F] text-white'>Login</button>
+                </div>
+                
+            </div>
         </div>
     );
 };
