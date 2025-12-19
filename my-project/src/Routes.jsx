@@ -5,7 +5,13 @@ import HomeLayout from "./HomeLayout/HomeLayout";
 const routes=createBrowserRouter([
     {
         path:'/',
-        element:<HomeLayout></HomeLayout>
+        element:<HomeLayout></HomeLayout>,
+        children:[
+            {
+                path:'/',
+                element:<h1>This is home layout</h1>
+            }
+        ]
     },
     {
         path:'/news',
