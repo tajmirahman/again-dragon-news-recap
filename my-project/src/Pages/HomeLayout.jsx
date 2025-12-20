@@ -19,7 +19,7 @@ const HomeLayout = () => {
             {/* Main Layout */}
 
             <div className='grid grid-cols-1 md:grid-cols-12 gap-3'>
-                <aside className='col-span-3'>
+                <aside className='col-span-3 sticky top-0 h-fit'>
                     <LeftSide></LeftSide>
                 </aside>
 
@@ -27,7 +27,7 @@ const HomeLayout = () => {
                     <Outlet></Outlet>
                 </aside>
 
-                <aside className='col-span-3'>
+                <aside className='col-span-3 sticky top-0 h-fit'>
                     <RightSide></RightSide>
                 </aside>
             </div>

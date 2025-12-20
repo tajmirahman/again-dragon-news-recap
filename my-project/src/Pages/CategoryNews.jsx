@@ -7,9 +7,7 @@ const CategoryNews = () => {
     const { id } = useParams();
     const data = useLoaderData()
     const [categoryNews, setCategoryNews] = useState([]);
-    // const [loading, setLoading] = useState(true);
 
-    // console.log(id,data);
 
     useEffect(() => {
 
