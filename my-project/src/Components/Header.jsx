@@ -8,15 +8,15 @@ const Header = () => {
               
             </div>
             <div className="navbar-center gap-3">
-                <Link>Home</Link>
-                <Link>News</Link>
-                <Link>pages</Link>
+                <Link to={'/'}>Home</Link>
+                <Link to={'/news'}>News</Link>
+                <Link to={'/pages'}>pages</Link>
             </div>
             <div className="navbar-end">
                 
                 <div className='flex justify-center items-center gap-2'>
                     <img src={user} alt="" />
-                    <button className='btn bg-[#403F3F] text-white'>Login</button>
+                    <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
                 </div>
                 
             </div>
