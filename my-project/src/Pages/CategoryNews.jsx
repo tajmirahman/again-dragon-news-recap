@@ -14,7 +14,7 @@ const CategoryNews = () => {
             setCategoryNews(data);
             return;
         } else if (id == '1') {
-            const filterBracking = data.filter(news => news.others_info.is_todays_pick == true);
+            const filterBracking = data.filter(news => news.others.is_todays_pick == true);
             setCategoryNews(filterBracking)
         } else {
             const filterNews = data.filter(news => news.category_id == id);
