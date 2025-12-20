@@ -7,7 +7,7 @@ import RightSide from '../Components/HomeLayout/RightSide';
 
 const HomeLayout = () => {
     return (
-        <div className='w-10/12 mx-auto '>
+        <div className='w-10/12 mx-auto bg-white'>
 
 
             {/* Navber */}
@@ -18,7 +18,7 @@ const HomeLayout = () => {
 
             {/* Main Layout */}
 
-            <div className='grid grid-cols-1 md:grid-cols-12 '>
+            <div className='grid grid-cols-1 md:grid-cols-12 gap-2'>
                 <aside className='col-span-3'>
                     <LeftSide></LeftSide>
                 </aside>

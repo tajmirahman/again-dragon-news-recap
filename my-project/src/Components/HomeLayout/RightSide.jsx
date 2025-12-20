@@ -26,6 +26,13 @@ const RightSide = () => {
                     <button className="btn w-full btn-ghost btn-outline"><AiFillTwitterCircle /> Twitter</button>
                 </div>
             </div>
+
+            <div className="mt-3">
+                <img src={qZone1} alt="" />
+                <img src={qZone2} alt="" />
+                <img src={qZone3} alt="" />
+            </div>
+
         </div>
     );
 };
