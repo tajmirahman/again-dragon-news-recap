@@ -18,7 +18,7 @@ const HomeLayout = () => {
 
             {/* Main Layout */}
 
-            <div className='grid grid-cols-1 md:grid-cols-12 gap-2'>
+            <div className='grid grid-cols-1 md:grid-cols-12 gap-3'>
                 <aside className='col-span-3'>
                     <LeftSide></LeftSide>
                 </aside>

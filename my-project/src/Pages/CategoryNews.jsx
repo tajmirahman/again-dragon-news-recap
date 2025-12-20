@@ -7,6 +7,7 @@ const CategoryNews = () => {
     const { id } = useParams();
     const data = useLoaderData()
     const [categoryNews, setCategoryNews] = useState([]);
+    // const [loading, setLoading] = useState(true);
 
     // console.log(id,data);
 
@@ -24,16 +25,17 @@ const CategoryNews = () => {
             const filterNews = data.filter(news => news.category_id == id);
             setCategoryNews(filterNews)
         }
+      
 
     }, [id, data]);
 
 
     return (
         <div>
-            Total {categoryNews.length} news is found.
-            <div>
+            {/* Total {categoryNews.length} news is found. */}
+            <div className='space-y-2'>
                 {
-                    categoryNews.map((news)=><CardNews news={news}></CardNews>)
+                    categoryNews?.map((news)=><CardNews key={news.id} news={news}></CardNews>)
                 }
             </div>
         </div>

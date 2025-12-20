@@ -13,9 +13,9 @@ const CardNews = ({ news }) => {
     } = news;
 
     return (
-        <div className="card bg-base-100 shadow-lg rounded-2xl">
+        <div className="card bg-base-100 shadow-lg">
             {/* Author */}
-            <div className="flex items-center justify-between p-4 bg-base-200 rounded-t-2xl">
+            <div className="flex items-center justify-between p-4 bg-base-200 ">
                 <div className="flex items-center gap-3">
                     <img
                         src={author.img}
