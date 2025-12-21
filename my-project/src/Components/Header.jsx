@@ -23,7 +23,7 @@ const Header = () => {
                 }
             </div>
             <div className="navbar-center gap-3">
-                <Link to={'/'}>Home</Link>
+                {/* <Link to={'/'}>Home</Link> */}
                 <Link to={'/news'}>News</Link>
                 <Link to={'/pages'}>pages</Link>
             </div>

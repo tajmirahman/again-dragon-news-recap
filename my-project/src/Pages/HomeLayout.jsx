@@ -6,6 +6,8 @@ import LeftSide from '../Components/HomeLayout/LeftSide';
 import RightSide from '../Components/HomeLayout/RightSide';
 
 const HomeLayout = () => {
+
+
     return (
         <div className='md:w-10/12  mx-auto bg-white'>
 

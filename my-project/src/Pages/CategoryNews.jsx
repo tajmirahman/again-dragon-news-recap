@@ -5,7 +5,8 @@ import CardNews from './CardNews';
 const CategoryNews = () => {
 
     const { id } = useParams();
-    const data = useLoaderData()
+    const data = useLoaderData();
+ 
     const [categoryNews, setCategoryNews] = useState([]);
 
 
