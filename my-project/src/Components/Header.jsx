@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import user from '../assets/user.png';
+import userLogo from '../assets/user.png';
 
 const Header = () => {
+    
+
     return (
         <div className="navbar ">
             <div className="navbar-start">
@@ -15,7 +17,7 @@ const Header = () => {
             <div className="navbar-end">
                 
                 <div className='flex justify-center items-center gap-2'>
-                    <img src={user} alt="" />
+                    <img src={userLogo} alt="" />
                     <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
                 </div>
                 
