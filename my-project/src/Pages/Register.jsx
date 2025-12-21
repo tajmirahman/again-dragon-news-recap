@@ -4,25 +4,25 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
-    const {createUser,setUser}=useContext(AuthContext);
+    const { createUser, setUser } = useContext(AuthContext);
 
 
-    const handleRegister=(e)=>{
+    const handleRegister = (e) => {
         e.preventDefault();
-        const form=e.target;
-        const name=form.name.value;
-        const photo=form.photo.value;
-        const email=form.email.value;
-        const password=form.password.value;
-        console.log({name,photo,email,password});
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({ name, photo, email, password });
 
-         createUser(email,password)
-         .then(res=>{
-             console.log(res);
-             const user=res.user;
-             setUser(user);
-         })
-         .catch(error=>console.log(error.code))
+        createUser(email, password)
+            .then(res => {
+
+                const user = res.user;
+                setUser(user);
+            })
+            .catch(error => console.log(error.code))
     }
 
 
@@ -32,19 +32,19 @@ const Register = () => {
             <form onSubmit={handleRegister} className='w-3/6 mx-auto'>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Name</legend>
-                    <input type="text" name='name' className="input" placeholder="Type your Name"  required/>
+                    <input type="text" name='name' className="input" placeholder="Type your Name" required />
                 </fieldset>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Photo Url</legend>
-                    <input type="text" name='photo' className="input" placeholder="Type your photo url" required/>
+                    <input type="text" name='photo' className="input" placeholder="Type your photo url" required />
                 </fieldset>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Email</legend>
-                    <input type="email" name='email' className="input" placeholder="Type your email" required/>
+                    <input type="email" name='email' className="input" placeholder="Type your email" required />
                 </fieldset>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Password</legend>
-                    <input type="Pasword" name='password' className="input" placeholder="Type your password" required/>
+                    <input type="Pasword" name='password' className="input" placeholder="Type your password" required />
 
                 </fieldset>
 
