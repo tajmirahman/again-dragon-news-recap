@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import userLogo from '../assets/user.png';
+import { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Header = () => {
-    
+    const {user}=useContext(AuthContext)
 
     return (
         <div className="navbar ">
             <div className="navbar-start">
-              
+              {
+                user && user.email
+              }
             </div>
             <div className="navbar-center gap-3">
                 <Link to={'/'}>Home</Link>
