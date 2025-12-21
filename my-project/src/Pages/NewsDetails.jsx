@@ -1,24 +1,24 @@
-import {  format } from 'date-fns';
+import { format } from 'date-fns';
 import logo from '../assets/logo.png'
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const NewsDetails = () => {
 
-    const data =useLoaderData();
-    const {id}= useParams();
-    const [news, setNews]=useState({});
+    const data = useLoaderData();
+    const { id } = useParams();
+    const [news, setNews] = useState({});
 
     // console.log(data,id)
 
-    useEffect(()=>{
-        const newsDetails= data.find(singleNews=> singleNews.id == id);
+    useEffect(() => {
+        const newsDetails = data.find(singleNews => singleNews.id == id);
         setNews(newsDetails);
-    },[data, id])
+    }, [data, id])
 
     console.log(news)
 
-   
+
 
     return (
         <div className='w-10/12 mx-auto'>
@@ -32,7 +32,7 @@ const NewsDetails = () => {
                 </div>
             </div>
 
-            <div className='grid md:grid-cols-12'>
+            <div className='grid md:grid-cols-12 '>
 
                 <section className='col-span-9'>
                     <div className='w-full space-y-3'>

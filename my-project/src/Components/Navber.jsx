@@ -5,7 +5,7 @@ const Navber = () => {
     return (
 
         <>
-            <div className='w-1/4 mx-auto mt-5'>
+            <div className='md:w-1/4 mx-auto mt-5'>
                 <img src={logo} alt="" />
                 <div className='text-center mt-2'>
                     <p>Journalism Without Fear or Favour</p>

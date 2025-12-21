@@ -7,7 +7,7 @@ import RightSide from '../Components/HomeLayout/RightSide';
 
 const HomeLayout = () => {
     return (
-        <div className='w-10/12 mx-auto bg-white'>
+        <div className='md:w-10/12  mx-auto bg-white'>
 
 
             {/* Navber */}
