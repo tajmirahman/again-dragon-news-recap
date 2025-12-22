@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
     const { createUser, setUser } = useContext(AuthContext);
     const [error, setError]=useState('');
+    const navigate=useNavigate();
 
 
 
@@ -14,21 +15,27 @@ const Register = () => {
         const form = e.target;
         const name = form.name.value;
 
-        if(name.length<5){
-            setError('Must be at least 5 character')
+        if(name.length<4){
+            setError('Name field must be at least 5 character')
             return;
         }
-
+        
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log({ name, photo, email, password });
+        if(password.length<6){
+            setError('Password must be at least 6 character');
+            return;
+        }
+
+        console.log(photo)
+
 
         createUser(email, password)
             .then(res => {
-
                 const user = res.user;
                 setUser(user);
+                navigate('/category/1')
             })
             .catch(error => console.log(error.code))
     }
@@ -52,7 +59,7 @@ const Register = () => {
                 </fieldset>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Password</legend>
-                    <input type="Pasword" name='password' className="input" placeholder="Type your password" required />
+                    <input type="password" name='password' className="input" placeholder="Type your password" required />
 
                 </fieldset>
 
