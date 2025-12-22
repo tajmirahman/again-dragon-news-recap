@@ -1,16 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
     const { createUser, setUser } = useContext(AuthContext);
+    const [error, setError]=useState('');
+
 
 
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
+
+        if(name.length<5){
+            setError('Must be at least 5 character')
+            return;
+        }
+
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
@@ -47,6 +55,10 @@ const Register = () => {
                     <input type="Pasword" name='password' className="input" placeholder="Type your password" required />
 
                 </fieldset>
+
+                {
+                    error && <p className='text-red-400'>{error}</p>
+                }
 
                 <button type='submit' className="btn bg-[#403F3F] font-semibold text-white w-full mt-5">Login</button>
 
