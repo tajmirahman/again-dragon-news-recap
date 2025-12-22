@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import logo from '../assets/logo.png'
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import RightSide from '../Components/HomeLayout/RightSide';
 
 const NewsDetails = () => {
 
@@ -32,7 +33,7 @@ const NewsDetails = () => {
                 </div>
             </div>
 
-            <div className='grid md:grid-cols-12 '>
+            <div className='grid md:grid-cols-12 gap-3 mt-10'>
 
                 <section className='col-span-9'>
                     <div className='w-full space-y-3'>
@@ -46,7 +47,7 @@ const NewsDetails = () => {
                 </section>
 
                 <section className='col-span-3'>
-                    Login With
+                    <RightSide></RightSide>
                 </section>
 
             </div>

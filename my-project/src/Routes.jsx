@@ -6,6 +6,7 @@ import AuthLayout from "./LayOut/AuthLayout";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import NewsDetails from "./Pages/NewsDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const routes = createBrowserRouter([
@@ -21,26 +22,28 @@ const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <CategoryNews></CategoryNews>,
-                loader:()=> fetch('/news.json'),
+                loader: () => fetch('/news.json'),
             }
         ]
     },
     {
         path: '/news-details/:id',
-        element: <NewsDetails></NewsDetails>,
-        loader:()=>fetch('/news.json')
+        element: <PrivateRoutes>
+            <NewsDetails></NewsDetails>
+        </PrivateRoutes>,
+        loader: () => fetch('/news.json')
     },
     {
         path: '/auth',
         element: <AuthLayout></AuthLayout>,
-        children:[
+        children: [
             {
-                path:'/auth/login',
+                path: '/auth/login',
                 element: <Login></Login>
             },
             {
                 path: '/auth/register',
-                element:<Register></Register>
+                element: <Register></Register>
             }
         ]
     },
