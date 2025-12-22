@@ -22,7 +22,8 @@ const Login = () => {
             .then(result => {
                 const user=result.user;
                 setUser(user);
-                navigate(`${location.state ? location.state : '/'}`)
+                console.log(user)
+                navigate(`${location.state ? location.state : '/category/1'}`)
             })
             .catch(error => {
                 setError(error.code);

@@ -4,9 +4,9 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, setUser } = useContext(AuthContext);
-    const [error, setError]=useState('');
-    const navigate=useNavigate();
+    const { createUser, setUser, userUpdate } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
 
 
@@ -15,15 +15,15 @@ const Register = () => {
         const form = e.target;
         const name = form.name.value;
 
-        if(name.length<4){
+        if (name.length < 4) {
             setError('Name field must be at least 5 character')
             return;
         }
-        
+
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        if(password.length<6){
+        if (password.length < 6) {
             setError('Password must be at least 6 character');
             return;
         }
@@ -34,8 +34,17 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 const user = res.user;
-                setUser(user);
-                navigate('/category/1')
+                userUpdate({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        setUser({ ...user, displayName: name, photoURL: photo });
+                        navigate('/category/1');
+                    })
+                    .catch(error => {
+                        console.log(error.code)
+                        setUser(user)
+                    })
+
+
             })
             .catch(error => console.log(error.code))
     }
