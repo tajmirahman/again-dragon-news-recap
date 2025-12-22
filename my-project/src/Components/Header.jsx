@@ -30,7 +30,10 @@ const Header = () => {
             <div className="navbar-end">
 
                 <div className='flex justify-center items-center gap-2'>
-                    <img src={userLogo} alt="" />
+                    {
+                        user && user.email ? <img className='w-20 h-20 rounded-full' src={user.photoURL} alt="" /> : <img src={userLogo} alt="" />
+                    }
+                    
                     {
                         user ?
 

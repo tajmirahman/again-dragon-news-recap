@@ -4,11 +4,9 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, setUser, userUpdate } = useContext(AuthContext);
+    const { createUser, userUpdate } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -32,21 +30,22 @@ const Register = () => {
 
 
         createUser(email, password)
-            .then(res => {
-                const user = res.user;
-                userUpdate({ displayName: name, photoURL: photo })
-                    .then(() => {
-                        setUser({ ...user, displayName: name, photoURL: photo });
-                        navigate('/category/1');
-                    })
-                    .catch(error => {
-                        console.log(error.code)
-                        setUser(user)
-                    })
-
-
+            .then(() => {
+// ei khane firebase nije user update kore 
+                return userUpdate({
+                    displayName:name,
+                    photoURL:photo
+                })    
             })
-            .catch(error => console.log(error.code))
+            
+            .then(()=>{
+                    navigate('/category/1', {replace:true})
+                })
+            
+            .catch((error) => {
+                console.log(error.code);
+                setError(error.message);
+            });
     }
 
 
@@ -76,7 +75,7 @@ const Register = () => {
                     error && <p className='text-red-400'>{error}</p>
                 }
 
-                <button type='submit' className="btn bg-[#403F3F] font-semibold text-white w-full mt-5">Login</button>
+                <button type='submit' className="btn bg-[#403F3F] font-semibold text-white w-full mt-5">Register</button>
 
                 <p className='mt-5'>Dont’t Have An Account ? <Link to={'/auth/login'} className='text-red-300'>Login</Link></p>
 
