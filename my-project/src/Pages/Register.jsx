@@ -31,17 +31,17 @@ const Register = () => {
 
         createUser(email, password)
             .then(() => {
-// ei khane firebase nije user update kore 
+                // ei khane firebase nije user update kore 
                 return userUpdate({
-                    displayName:name,
-                    photoURL:photo
-                })    
-            })
-            
-            .then(()=>{
-                    navigate('/category/1', {replace:true})
+                    displayName: name,
+                    photoURL: photo
                 })
-            
+            })
+
+            .then(() => {
+                navigate('/category/1', { replace: true })
+            })
+
             .catch((error) => {
                 console.log(error.code);
                 setError(error.message);
@@ -50,9 +50,11 @@ const Register = () => {
 
 
     return (
-        <div className='w-full md:w-3/6 mx-auto bg-[#FFFFFF] mt-10 p-5'>
-            <h1 className='font-semibold text-center my-5 text-xl'>Register your account</h1>
-            <form onSubmit={handleRegister} className='w-3/6 mx-auto'>
+        <div className='w-full md:w-2/6 mx-auto bg-[#FFFFFF] p-3'>
+
+            <h1 className='font-semibold text-center text-xl'>Register your account</h1>
+
+            <form onSubmit={handleRegister} className='w-full md:w-5/6 mx-auto'>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Name</legend>
                     <input type="text" name='name' className="input" placeholder="Type your Name" required />
@@ -75,7 +77,7 @@ const Register = () => {
                     error && <p className='text-red-400'>{error}</p>
                 }
 
-                <button type='submit' className="btn bg-[#403F3F] font-semibold text-white w-full mt-5">Register</button>
+                <button type='submit' className="btn bg-[#403F3F] font-semibold text-white md:w-full mt-5">Register</button>
 
                 <p className='mt-5'>Dont’t Have An Account ? <Link to={'/auth/login'} className='text-red-300'>Login</Link></p>
 
